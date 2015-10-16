@@ -1,0 +1,50 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>puppet</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+    <fileSets>
+        <fileSet>
+            <filtered>true</filtered>
+            <directory>${basedir}/src/main/resources/mywebapp/manifests</directory>
+            <includes>
+                <include>init.pp</include>
+            </includes>
+            <outputDirectory>/mywebapp/manifests</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/mywebapp</directory>
+            <outputDirectory>/mywebapp</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+            <excludes>
+                <exclude>manifests/init.pp</exclude>
+            </excludes>
+
+        </fileSet>
+        <fileSet>
+            <filtered>true</filtered>
+            <directory>${project.build.directory}/files</directory>
+            <outputDirectory>/mywebapp/files</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+
+        </fileSet>
+    </fileSets>
+
+    <!--This is my depdendency I want to include when I am building the project -->
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <includes>
+                <include>sam.mywebapp:myapplication-webapp</include>
+            </includes>
+            <outputDirectory>/mywebapp/files</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+</assembly>
