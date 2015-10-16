@@ -1,0 +1,4 @@
+#You can create some cli to do some additional configuration to the config files for tomcat
+#Not sure if this is possible in tomcat for instance in JBOSS you can create a simple script like follows to add
+#CORS support
+/subsystem=web/connector=https/ssl=configuration/:write-attribute(name=verify-client,value=want)

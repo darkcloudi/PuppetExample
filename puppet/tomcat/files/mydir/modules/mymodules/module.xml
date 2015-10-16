@@ -1,0 +1,14 @@
+<!-- For jboss we had a module.xml file which told jboss which depdendencies to use,
+the pom.xml calls this depdendencies to include for deployment -->
+<module xmlns='urn:jboss:module:1.1' name='samtest'>
+   <dependencies>
+       <module name='org.apache.log4j' export="true" />
+       <!-- List more depdencies here -->
+   </dependencies>
+
+    <resources>
+
+        <resource-root path="resteasy-jaxrs-3.0.11.Final" />
+    </resources>
+
+</module>
