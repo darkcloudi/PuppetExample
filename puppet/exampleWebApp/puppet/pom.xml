@@ -47,4 +47,11 @@
             <outputDirectory>/mywebapp/files</outputDirectory>
         </dependencySet>
     </dependencySets>
+    <artifactId>puppetModule</artifactId>
+    <packaging>war</packaging>
+    <parent>
+    	<groupId>com.sam</groupId>
+    	<artifactId>myParent</artifactId>
+    	<version>1.0.0-SNAPSHOT</version>
+    </parent>
 </assembly>

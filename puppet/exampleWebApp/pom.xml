@@ -1,0 +1,13 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sam</groupId>
+  <artifactId>myParent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>myWebApp</module>
+
+    <module>puppetExample</module>
+  </modules>
+</project> 
