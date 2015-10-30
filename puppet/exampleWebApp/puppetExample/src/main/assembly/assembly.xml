@@ -6,6 +6,7 @@
         <format>tar.gz</format>
     </formats>
 	<!-- Appears to work with moduleSet -->
+
     <moduleSets>
         <moduleSet>
             <useAllReactorProjects>true</useAllReactorProjects>
@@ -19,21 +20,21 @@
         </moduleSet>
     </moduleSets>
    
+       
         
-        
-      <!--This is my depdendency I want to include when I am building the project 
+      <!--This is my dependency I want to include when I am building the project 
       Old dependencies which also need to specified in the dependencies -->
-    <!-- 
+  <!-- 
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <includes>
-                <include>com.sam:myWebApp:war:0.0.1</include>
+                <include>com.sam:myWebApp:war:1.0.0-SNAPSHOT</include>
             </includes>
             <outputDirectory>myWebApp/files</outputDirectory>
         </dependencySet>
     </dependencySets>
-      -->
+ -->
 
     <fileSets>
       <fileSet>
@@ -64,48 +65,15 @@
             </includes>
 
         </fileSet>
-        <!--
-            Adds startup scripts to the root directory of zip package. The startup
-            scripts are from the src/main/scripts directory.
-        -->
-        <!-- 
-        <fileSet>
-            <directory>${project.build.scriptSourceDirectory}</directory>
-            <outputDirectory></outputDirectory>
-            <includes>
-                <include>startup.*</include>
-            </includes>
-        </fileSet>
-         -->
-        <!--
-            Adds the jar file of our example application to the root directory
-            of the created zip package.
-        -->
         <!-- 
         <fileSet>
             <directory>${project.build.directory}</directory>
             <outputDirectory></outputDirectory>
             <includes>
-                <include>*.jar</include>
+                <include>*.war</include>
             </includes>
         </fileSet>
          -->
     </fileSets>
 </assembly>
-  
-    <!-- 
-    <fileSets>
-    <fileSet>
-      <directory>${project.build.directory}</directory>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>*.war</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>${project.build.directory}/test</directory>
-      <outputDirectory>docs</outputDirectory>
-    </fileSet>
-  </fileSets>
-   -->
  
