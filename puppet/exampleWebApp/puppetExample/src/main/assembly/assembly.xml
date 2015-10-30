@@ -6,15 +6,14 @@
         <format>tar.gz</format>
     </formats>
 
-   
     <dependencySets>
-        <dependencySet>
-         
+        <dependencySet>   
             <useProjectArtifact>false</useProjectArtifact>
             <includes>
-                <include>com.sam:myWebApp</include>
+                <include>${project.groupId}:*:war:${project.version}</include>
+                <!--  <include>com.sam:myWebApp</include> -->
             </includes>
-            <outputDirectory>/mywebapp/files</outputDirectory>
+            <outputDirectory>files</outputDirectory>
             <unpack>false</unpack>
         </dependencySet>
      
@@ -90,14 +89,6 @@
          -->
     </fileSets>
 </assembly>
-
-
-  
-    
-    <fileSets>
-      
-    </fileSets>
-
   
     <!-- 
     <fileSets>

@@ -6,16 +6,12 @@
   	<artifactId>myParent</artifactId>
   	<version>1.0.0-SNAPSHOT</version>
   </parent>
+  <packaging>pom</packaging>
   <artifactId>puppetExample</artifactId>
   <!-- <packaging>pom</packaging>  -->
 
     <name>Sams Puppet Example</name>
   
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
 <!-- 
     <dependencies>
         <dependency>
@@ -51,5 +47,5 @@
     </build>
    
 
-    <packaging>pom</packaging>
+
 </project>

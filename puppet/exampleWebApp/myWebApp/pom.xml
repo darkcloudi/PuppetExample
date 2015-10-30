@@ -5,6 +5,9 @@
   <packaging>war</packaging>
   <name>myWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -12,9 +15,21 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+  
   </dependencies>
+  <!-- 
+  <dependencyManagement>
+    <dependencies>
+         <dependency>
+            <groupId>com.sam</groupId>
+            <artifactId>myWebApp</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+ -->
   <build>
-    <finalName>myWebApp</finalName>
+   <finalName>myWebApp</finalName>
   </build>
   <parent>
   	<groupId>com.sam</groupId>
