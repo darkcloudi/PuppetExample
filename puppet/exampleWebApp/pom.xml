@@ -7,7 +7,6 @@
 
   <modules>
     <module>myWebApp</module>
-
     <module>puppetExample</module>
   </modules>
 </project> 

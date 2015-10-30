@@ -5,32 +5,35 @@
     <formats>
         <format>tar.gz</format>
     </formats>
-
-    <dependencySets>
-        <dependencySet>   
-            <useProjectArtifact>false</useProjectArtifact>
-            <includes>
-                <include>${project.groupId}:*:war:${project.version}</include>
-                <!--  <include>com.sam:myWebApp</include> -->
+	<!-- Appears to work with moduleSet -->
+    <moduleSets>
+        <moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+             <includes>
+                <include>com.sam:myWebApp:war:${project.version}</include>  
             </includes>
-            <outputDirectory>files</outputDirectory>
-            <unpack>false</unpack>
-        </dependencySet>
-     
-    </dependencySets>
-  
-      <!--This is my depdendency I want to include when I am building the project -->
-      <!-- 
+           <binaries>
+                <outputDirectory>myWebApp/files</outputDirectory>
+                <unpack>false</unpack>
+            </binaries>
+        </moduleSet>
+    </moduleSets>
+   
+        
+        
+      <!--This is my depdendency I want to include when I am building the project 
+      Old dependencies which also need to specified in the dependencies -->
+    <!-- 
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <includes>
-                <include>com.sam:myWebApp</include>
+                <include>com.sam:myWebApp:war:0.0.1</include>
             </includes>
-            <outputDirectory>/mywebapp/files</outputDirectory>
+            <outputDirectory>myWebApp/files</outputDirectory>
         </dependencySet>
     </dependencySets>
-     -->
+      -->
 
     <fileSets>
       <fileSet>
@@ -93,23 +96,14 @@
     <!-- 
     <fileSets>
     <fileSet>
-      <directory>${project.basedir}</directory>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>README*</include>
-        <include>LICENSE*</include>
-        <include>NOTICE*</include>
-      </includes>
-    </fileSet>
-    <fileSet>
       <directory>${project.build.directory}</directory>
       <outputDirectory>/</outputDirectory>
       <includes>
-        <include>*.jar</include>
+        <include>*.war</include>
       </includes>
     </fileSet>
     <fileSet>
-      <directory>${project.build.directory}/site</directory>
+      <directory>${project.build.directory}/test</directory>
       <outputDirectory>docs</outputDirectory>
     </fileSet>
   </fileSets>
